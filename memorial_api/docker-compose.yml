@@ -7,7 +7,7 @@ services:
     ports:
       - "5432:5432"
 #    volumes:
-#      - moonwalk_db:/var/lib/postgresql/data
+#      - memorial_db:/var/lib/postgresql/data
   app:
     image: openjdk:17-slim
     container_name: memorial_app
@@ -22,4 +22,4 @@ services:
     command: ["java", "-jar", "/app/app.jar"]
 
 #volumes:
-#  moonwalk_db:
+#  memorial_db:
