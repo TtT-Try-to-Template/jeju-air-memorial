@@ -1,4 +1,4 @@
-package com.jejuair.memorial;
+package com.jejuair.memorial.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

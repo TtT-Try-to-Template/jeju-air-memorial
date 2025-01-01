@@ -1,15 +1,16 @@
-package com.jejuair.memorial;
+package com.jejuair.memorial.controller;
 
+import com.jejuair.memorial.dto.MemorialListDetails;
+import com.jejuair.memorial.service.MemorialService;
 import com.jejuair.memorial.dto.MemorialDto;
 import com.jejuair.memorial.dto.MemorialResponseDto;
 import jakarta.validation.Valid;
-import java.util.List;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController("/api")
@@ -27,4 +28,9 @@ public class MemorialController {
         return ResponseEntity.ok(response);
     }
 
+    @GetMapping("/memorials")
+    public ResponseEntity<MemorialListDetails> getMemorials(@RequestParam(required = false) Long cursor) {
+        MemorialListDetails details = memorialService.getMemorials(cursor);
+        return ResponseEntity.ok(details);
+    }
 }
