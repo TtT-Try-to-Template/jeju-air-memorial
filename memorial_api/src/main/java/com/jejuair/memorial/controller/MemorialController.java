@@ -1,5 +1,6 @@
 package com.jejuair.memorial.controller;
 
+import com.jejuair.memorial.dto.MemorialCountDto;
 import com.jejuair.memorial.dto.MemorialListDetails;
 import com.jejuair.memorial.service.MemorialService;
 import com.jejuair.memorial.dto.MemorialDto;
@@ -32,5 +33,11 @@ public class MemorialController {
     public ResponseEntity<MemorialListDetails> getMemorials(@RequestParam(required = false) Long cursor) {
         MemorialListDetails details = memorialService.getMemorials(cursor);
         return ResponseEntity.ok(details);
+    }
+
+    @GetMapping("/memorials/count")
+    public ResponseEntity<MemorialCountDto> getCount() {
+        MemorialCountDto response = memorialService.getCount();
+        return ResponseEntity.ok(response);
     }
 }

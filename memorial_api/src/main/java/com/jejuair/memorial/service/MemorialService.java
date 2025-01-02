@@ -1,5 +1,6 @@
 package com.jejuair.memorial.service;
 
+import com.jejuair.memorial.dto.MemorialCountDto;
 import com.jejuair.memorial.dto.MemorialListDetails;
 import com.jejuair.memorial.repository.MemorialRepository;
 import com.jejuair.memorial.domain.Memorial;
@@ -48,5 +49,11 @@ public class MemorialService {
             .collect(Collectors.toList());
 
         return new MemorialListDetails(dtos, nextCursorId);
+    }
+
+    @Transactional(readOnly = true)
+    public MemorialCountDto getCount() {
+
+        return new MemorialCountDto(memorialRepository.count());
     }
 }

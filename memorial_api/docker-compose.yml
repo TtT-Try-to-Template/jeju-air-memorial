@@ -13,7 +13,7 @@ services:
     container_name: memorial_app
     env_file: .env
     ports:
-      - "8080:8080"
+      - "8000:8080"
     volumes:
       - ./app.jar:/app/app.jar
     depends_on:
