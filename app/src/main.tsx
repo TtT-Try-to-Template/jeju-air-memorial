@@ -6,6 +6,9 @@ import { urlPaths } from './features/Router';
 import './index.css';
 import LandingRouter from "@/pages/router/LandingRouter";
 import Post from "@/pages/Post";
+import ReactGA from "react-ga4";
+
+ReactGA.initialize(import.meta.env.VITE_GA_KEY);
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
