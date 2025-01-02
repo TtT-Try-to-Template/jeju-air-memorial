@@ -10,9 +10,11 @@ const Home: React.FC = () => {
       <Suspense fallback={<Typo>불러오는 중..</Typo>}>
         <RememberAnnouncer />
       </Suspense>
-      <Suspense fallback={<Typo>불러오는 중...</Typo>}>
-        <MemoList />
-      </Suspense>
+      <div className="flex-1 overflow-y-auto mb-6">
+        <Suspense fallback={<Typo>불러오는 중...</Typo>}>
+          <MemoList />
+        </Suspense>
+      </div>
       <BottomNav />
     </Layout>
   );
