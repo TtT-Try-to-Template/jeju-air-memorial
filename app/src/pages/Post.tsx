@@ -51,7 +51,7 @@ const Post: React.FC = () => {
           onChange={onTyping}
           onKeyDown={onBlocking}
           placeholder="짧아도 괜찮습니다. 진심 어린 한마디를 남겨주세요."
-          className="w-full h-full mt-[38px] pb-[12px] outline-none"
+          className="w-full h-full mt-[38px] pb-[12px] outline-none font-pretendard"
         />
         <div>
           <div className="flex justify-end pb-[12px]">
