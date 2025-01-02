@@ -6,8 +6,8 @@ services:
     env_file: .env
     ports:
       - "5433:5432"
-    volumes:
-      - memorial_db:/var/lib/postgresql/data
+#    volumes:
+#      - memorial_db:/var/lib/postgresql/data
   app:
     image: openjdk:17-slim
     container_name: memorial_app
@@ -21,5 +21,5 @@ services:
     restart: always
     command: ["java", "-jar", "/app/app.jar"]
 
-volumes:
-  memorial_db:
+#volumes:
+#  memorial_db:
