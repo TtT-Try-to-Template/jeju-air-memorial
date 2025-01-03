@@ -50,7 +50,7 @@ const Post: React.FC = () => {
           value={typing}
           onChange={onTyping}
           onKeyDown={onBlocking}
-          placeholder="짧아도 괜찮습니다. 진심 어린 한마디를 남겨주세요."
+          placeholder="짧아도 괜찮습니다. 진심 어린 한마디를 남겨주세요.(15글자 이상)"
           className="w-full h-full mt-[38px] pb-[12px] outline-none font-pretendard"
         />
         <div>
@@ -63,7 +63,7 @@ const Post: React.FC = () => {
       </div>
       <div>
         <Button
-          disabled={typingLength < 20}
+          disabled={typingLength < 15}
           className={cn([
             'primary-button',
             'w-full !bg-black !text-white !hover:bg-zinc-600'
@@ -72,10 +72,10 @@ const Post: React.FC = () => {
         >
           마음 전달하기
         </Button>
-
       </div>
     </Layout>
   );
 }
+
 
 export default Post;
