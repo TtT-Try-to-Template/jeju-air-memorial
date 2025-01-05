@@ -6,6 +6,7 @@ import { usePostMemoMutation } from "@/features/Memorialize";
 import { useNavigate } from "react-router";
 import { urlPaths } from "@/features/Router";
 import generateRandomNickname from "@/features/Nickname";
+import Recommendation from "@/features/Memorialize/Recommendation";
 
 const LIMIT = 1000;
 
@@ -15,6 +16,7 @@ const Post: React.FC = () => {
   const navigate = useNavigate();
 
   const typingLength = typing.length;
+  const isTyping = typing.length !== 0;
 
   const onTyping = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { value } = e.target;
@@ -40,7 +42,6 @@ const Post: React.FC = () => {
       console.error(error);
       alert("오류가 발생하였습니다. 잠시 후 다시시도해주세요.");
     }
-
   };
 
   return (
@@ -53,6 +54,7 @@ const Post: React.FC = () => {
           placeholder="짧아도 괜찮습니다. 진심 어린 한마디를 남겨주세요.(15글자 이상)"
           className="w-full h-full mt-[38px] pb-[12px] outline-none font-pretendard"
         />
+        {!isTyping && <Recommendation onClickMent={setTyping}/>}
         <div>
           <div className="flex justify-end pb-[12px]">
             <Typo fontStyle="normal" size="lg" className="!text-zinc-400">
